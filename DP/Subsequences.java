@@ -60,6 +60,10 @@ public class Subsequences {
         StringBuilder res2 = new StringBuilder("");
 
         solve(s1, 0, res1, ans);
-        System.out.print(solve2(s2, 0, res2, ans));
+        // System.out.print(solve2(s2, 0, res2, ans));
+        System.out.println();
+        for(String i:ans){
+            System.out.print(i+" ");
+        }
     }
 }
