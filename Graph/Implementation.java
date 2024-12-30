@@ -1,5 +1,3 @@
-
-// package Graph;
 import java.util.*;
 
 public class Implementation {
@@ -19,26 +17,7 @@ public class Implementation {
         for (int i = 0; i < graph.length; i++) {
             graph[i] = new ArrayList<edge>();
         }
-        // graph[0].add(new edge(0, 1, 2));
-        // graph[0].add(new edge(0, 3, 4));
-        // graph[0].add(new edge(0, 5, 7));
-
-        // graph[1].add(new edge(1, 0, 8));
-        // graph[1].add(new edge(1, 2, 3));
-        // graph[1].add(new edge(1, 3, 1));
-        // graph[1].add(new edge(1, 5, 3));
-
-        // graph[2].add(new edge(2, 1, 2));
-
-        // graph[3].add(new edge(3, 0, 9));
-        // graph[3].add(new edge(3, 1, 4));
-        // graph[3].add(new edge(3, 4, 9));
-
-        // graph[4].add(new edge(4, 3, 2));
-
-        // graph[5].add(new edge(5, 0, 3));
-        // graph[5].add(new edge(5, 1, 5));
-
+        
         graph[0].add(new edge(0, 1, 10));
         graph[0].add(new edge(0, 2, 5));
         graph[0].add(new edge(0, 3, 8));
@@ -134,7 +113,7 @@ public class Implementation {
 
     static void Dijkastra(int src, boolean vis[], ArrayList<edge> graph[]) {
         PriorityQueue<Pair> pq = new PriorityQueue<Pair>();
-
+        
         int disArr[] = new int[graph.length];
         disArr[src] = 0;
         for (int i = 0; i < graph.length; i++) {
@@ -175,7 +154,7 @@ public class Implementation {
 
         createGraph(graph);
 
-        // BFS(graph, 5);
+        // BFS(graph, 2);
 
         // DFS(graph, 2, vis);
 
@@ -192,10 +171,10 @@ public class Implementation {
         // System.out.print("Enter vertex index to visit: ");
         // n = sc.nextInt();
         // if (n != -1) {
-        // print(graph, n);
+        // print(graph, 0);
         // }
         // }
 
-        Dijkastra(1, vis, graph);
+        // Dijkastra(1, vis, graph);
     }
 }

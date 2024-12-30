@@ -1,5 +1,5 @@
-// package Trees;
 
+// package Trees;
 import java.util.*;
 
 public class BuildTree {
@@ -7,7 +7,7 @@ public class BuildTree {
 
     public static void main(String[] args) {
 
-        int arr[] = { 1,2,3,4,5,6,7 };
+        int arr[] = { 1, 2, 3, 4, 5, 6, 7 };
         Node root = makeTreeFromArrayComplete(arr, arr.length, 0);
 
         // 1
@@ -28,15 +28,19 @@ public class BuildTree {
 
         // System.out.print("InorderTraversal: ");
         // inOrder(root);
+        // System.out.println();
 
         // System.out.print("PostOrderTraveersal: ");
         // postOrder(root);
+        // System.out.println();
 
         // System.out.print("PreOrderTraveersal: ");
         // preOrder(root);
+        // System.out.println();
 
-        // int h=heightTree(root);
-        // System.out.print("Height of Tree: "+h);
+        // int h = heightTree(root);
+        // System.out.print("Height of Tree: " + h);
+        // System.out.println();
 
         // int m=Maxele(root);
         // System.out.print("Max ele in Tree is: "+m);
@@ -123,10 +127,12 @@ public class BuildTree {
         List<Integer> topview = new ArrayList<>();
         Map<Integer, Integer> topviewmap = new HashMap<>();
 
-        Map<Integer, Integer> bottomviewmap = new HashMap<>();
         List<Integer> bottomview = new ArrayList<>();
+        Map<Integer, Integer> bottomviewmap = new HashMap<>();
 
         q.add(root);
+        q.add(null);
+
         bottomviewmap.put(0, root.data);
 
         horizD.add(new horizontalDis(0, root, root.data));
@@ -136,7 +142,6 @@ public class BuildTree {
         leftview.add(root.data);
         int d = 0;
         int flag = 0;
-        q.add(null);
 
         while (!q.isEmpty()) {
 
@@ -149,20 +154,20 @@ public class BuildTree {
                     q.add(null);
                 }
             } else {
-
                 Node temp = q.peek();
                 horizontalDis hh = horizD.peek();
-                int ff = hh.hd;
-                horizD.poll();
 
+                int ff = hh.hd;
+                d = temp.data;
+
+                horizD.poll();
                 q.poll();
+
                 if (flag == 1) { // here i use flag to check just next element after getting null means after ->
                                  // (q.peek() == null)
                     leftview.add(temp.data);
                     flag = 0;
                 }
-                d = temp.data;
-                // System.out.print(d+" ");
 
                 if (temp.left != null) {
                     q.add(temp.left);
@@ -172,6 +177,7 @@ public class BuildTree {
                     if (!topviewmap.containsKey(ff - 1)) {
                         topviewmap.put(ff - 1, temp.left.data);
                     }
+
                     horizD.add(new horizontalDis(ff - 1, temp.left, temp.left.data));
                     horizD1.add(new horizontalDis(ff - 1, temp.left, temp.left.data));
                 }
@@ -184,6 +190,7 @@ public class BuildTree {
                     if (!topviewmap.containsKey(ff + 1)) {
                         topviewmap.put(ff + 1, temp.right.data);
                     }
+                    
                     horizD.add(new horizontalDis(ff + 1, temp.right, temp.right.data));
                     horizD1.add(new horizontalDis(ff + 1, temp.right, temp.right.data));
                 }
@@ -208,7 +215,6 @@ public class BuildTree {
         // }
 
         // System.out.println("Bottom View: ");
-        // System.out.println(bottomviewmap);
         // for (int i : bottomviewmap.values()) {
         // bottomview.add(i);
         // }
@@ -219,26 +225,20 @@ public class BuildTree {
 
         // System.out.println(horizD);
 
-        Map<Integer, List<Integer>> map = new TreeMap<>();
+        // Map<Integer, List<Integer>> map = new TreeMap<>();
 
         // while (!horizD1.isEmpty()) {
 
-        // System.out.println(horizD1.peek().hd+" with hori: "+horizD1.peek().data);
+        // if (!map.containsKey(horizD1.peek().hd)) {
+        // map.put(horizD1.peek().hd, new ArrayList<>());
+        // }
+
+        // map.get(horizD1.peek().hd).add(horizD1.peek().data);
+
         // horizD1.poll();
         // }
 
-        while (!horizD1.isEmpty()) {
-
-            if (!map.containsKey(horizD1.peek().hd)) {
-                map.put(horizD1.peek().hd, new ArrayList<>());
-            }
-
-            map.get(horizD1.peek().hd).add(horizD1.peek().data);
-
-            horizD1.poll();
-        }
-
-        System.out.println(map);
+        // System.out.println(map);
 
     }
 
@@ -256,7 +256,6 @@ public class BuildTree {
     }
 
     public static Node makeTreeFromArrayComplete(int arr[], int n, int ind) {
-
         if (ind >= n)
             return null;
 
