@@ -1,4 +1,3 @@
-// package PractiseQues;
 import java.util.*;
 
 public class SumWithAlternateSignTillN {

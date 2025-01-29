@@ -46,10 +46,12 @@ public class BuildTree {
         // System.out.print("Max ele in Tree is: "+m);
 
         // System.out.println("Level-Order: ");
-        LevelOrderPrint(root);
+        // LevelOrderPrint(root);
 
         // System.out.println("Printing Leaf Nodes: ");
         // PrintLeaf(root);
+
+        System.out.println(Maxelement(root));
     }
 
     public static Node buildTree() {
@@ -156,7 +158,7 @@ public class BuildTree {
             } else {
                 Node temp = q.peek();
                 horizontalDis hh = horizD.peek();
-
+                System.out.print(temp.data+" ");
                 int ff = hh.hd;
                 d = temp.data;
 
@@ -265,6 +267,11 @@ public class BuildTree {
         temp.right = makeTreeFromArrayComplete(arr, n, ind * 2 + 2);
 
         return temp;
+    }
+    public static int Maxelement(Node root){
+        if(root==null) return 0;
+
+        return Math.max(root.data,Math.max(Maxelement(root.left),Maxelement(root.right)));
     }
 }
 
