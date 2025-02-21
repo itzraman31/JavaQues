@@ -1,5 +1,4 @@
 import java.util.*;
-
 public class BinaryStringGen {
     public static void solve(int len,StringBuilder s,ArrayList<String> ans){
         if(s.length()==len){
@@ -17,7 +16,7 @@ public class BinaryStringGen {
     public static void main(String[] args) {
         ArrayList<String> ans=new ArrayList<>();
         StringBuilder s=new StringBuilder("");
-        solve(16,s,ans);
+        solve(3,s,ans);
 
         System.out.println();
         for(String str:ans){
