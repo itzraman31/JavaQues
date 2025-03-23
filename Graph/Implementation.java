@@ -17,7 +17,7 @@ public class Implementation {
         for (int i = 0; i < graph.length; i++) {
             graph[i] = new ArrayList<edge>();
         }
-        
+
         graph[0].add(new edge(0, 1, 10));
         graph[0].add(new edge(0, 2, 5));
         graph[0].add(new edge(0, 3, 8));
@@ -113,7 +113,7 @@ public class Implementation {
 
     static void Dijkastra(int src, boolean vis[], ArrayList<edge> graph[]) {
         PriorityQueue<Pair> pq = new PriorityQueue<Pair>();
-        
+
         int disArr[] = new int[graph.length];
         disArr[src] = 0;
         for (int i = 0; i < graph.length; i++) {
