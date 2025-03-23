@@ -19,6 +19,7 @@ class WordSearch {
         int m = board.length;
         int n = board[0].length;
         boolean vis[][] = new boolean[m][n];
+
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (board[i][j] == word.charAt(0)) {
@@ -27,6 +28,7 @@ class WordSearch {
                 }
             }
         }
+        
         return false;
     }
 
