@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 class Playgame {
-    Scanner sc=new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
     int randomNum;
     int userNum;
 
@@ -10,26 +10,32 @@ class Playgame {
         inputuserNum();
     }
 
-    void inputuserNum(){
+    void inputuserNum() {
         System.out.print("Enter your number: ");
-        userNum=sc.nextInt();
+        userNum = sc.nextInt();
     }
 
-    boolean isCorrect(){
-        if(this.userNum==this.randomNum)return true;
+    boolean isCorrect() {
+        if (this.userNum == this.randomNum)
+            return true;
+        if (this.userNum > this.randomNum) {
+            System.out.println("Number is too large user num: "+userNum+" random num: "+randomNum);
+        } else {
+            System.out.println("Number is too small user num: "+userNum+" random num: "+randomNum);
+        }
         return false;
     }
 }
 
 public class GuessNumber {
     public static void main(String[] args) {
-        int count=0;
+        int count = 0;
         while (true) {
             count++;
             Playgame user1 = new Playgame();
             if (user1.isCorrect())
                 break;
         }
-        System.out.println("User win with "+count+" steps");
+        System.out.println("User win with " + count + " steps");
     }
 }
