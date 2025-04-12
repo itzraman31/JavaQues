@@ -9,19 +9,18 @@ public class AnimalEatSleep {
     public static class EatSleepclass implements EatSleep {
 
         public void sleep(String s){
-            System.out.println("Yes i do sleep on:" + s);
+            System.out.println("Yes i do sleep on: " + s);
         }
         
         public void eat(String s1){
-            System.out.println("Yes i eat:" + s1);
-        }
-        
+            System.out.println("Yes i eat: " + s1);
+        }   
     }
     public static void main(String args[])
     {
         EatSleep dog=new EatSleepclass();
 
-        dog.eat("Biscuits");
         dog.sleep("9'O Clock");
+        dog.eat("Biscuits");
     }
 }

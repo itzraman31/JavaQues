@@ -1,4 +1,25 @@
-import java.util.*;
+
+abstract class abs{
+    abstract void greeting(String s,int a);
+}
+class Employee extends abs {
+    String name;
+    String postion;
+    String dept;
+    private int salary;
+
+    int getSalary() {
+        return salary;
+    }
+    void setSalary(int sal) {
+        this.salary = sal;
+    }
+
+    @Override
+    void greeting(String s,int a){
+        System.out.println(s);
+    }
+}
 
 public class ImplementClass {
 
@@ -13,16 +34,11 @@ public class ImplementClass {
     public static void main(String[] args) {
         Employee obj = new Employee();
 
-        // obj.name="Hello world";
-        // System.out.println(obj.name);
-        
-        // changeObj(obj);
-        // System.out.println(obj.name);
-
         System.out.println(obj.getSalary());
         
         setSalaryftn(obj, 500);
         System.out.println(obj.getSalary());
+        obj.greeting("Good Night",0);
 
     }
 }
