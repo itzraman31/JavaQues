@@ -1,3 +1,6 @@
 {
     "java.debug.settings.onBuildFailureProceed": true
 }
+
+// System.out.printf("%,.2f", small);  upto two decimals after number eg:- 2.54
+// System.out.printf("%,.2f :: %,.3f", big, small);
