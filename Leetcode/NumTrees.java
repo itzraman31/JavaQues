@@ -17,4 +17,9 @@ public class NumTrees {
         Arrays.fill(dp, -1);
         return solve(n, dp);
     }
+
+    public static void main(String[] args) {
+        int n = 3;
+        System.out.println(numTrees(n));
+    }
 }
