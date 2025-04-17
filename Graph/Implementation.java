@@ -107,7 +107,7 @@ public class Implementation {
 
         @Override
         public int compareTo(Pair other) {
-            return Integer.compare(this.dis, other.dis);
+            return Integer.compare(this.dis, other.dis); // Sort in accessing order.
         }
     }
 
