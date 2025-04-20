@@ -12,7 +12,6 @@ public class Implementation {
             this.dist = dis;
         }
     }
-
     public static void createGraph(ArrayList<edge> graph[]) {
         for (int i = 0; i < graph.length; i++) {
             graph[i] = new ArrayList<edge>();
