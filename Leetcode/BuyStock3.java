@@ -27,4 +27,9 @@ public class BuyStock3 {
         }
         return solve(prices, 0, 1, 2, dp);
     }
+
+    public static void main(String[] args) {
+        int[] prices = {3, 3, 5, 0, 0, 3, 1, 4};
+        System.out.println(maxProfit(prices));
+    }
 }
