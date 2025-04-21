@@ -1,3 +1,14 @@
+
+class GuessGame {
+    static int pickedNumber = 42;
+
+    public static int guess(int num) {
+        if (num > pickedNumber) return -1;
+        else if (num < pickedNumber) return 1;
+        else return 0;
+    }
+}
+
 public class GuessNumber extends GuessGame {
     public static int guessNumber(int n) {
         int s = 1;
@@ -14,6 +25,7 @@ public class GuessNumber extends GuessGame {
 
     public static void main(String[] args) {
         int n = 100;
-        System.out.println(guessNumber(n));
+        System.out.println("Picked number: " + pickedNumber);
+        System.out.println("Guessed number: " + guessNumber(n));
     }
 }
