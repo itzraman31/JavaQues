@@ -27,9 +27,15 @@ public class PractTrees {
         if (ind >= arr.length)
             return null;
 
-        Node root = new Node(arr[ind]);
-        root.left = buildTreeFromArr(arr, (2 * ind) + 1);
-        root.right = buildTreeFromArr(arr, (2 * ind) + 2);
+        Node root;
+        if(arr[ind]==-1){
+            root=null;
+        }
+        else{
+            root = new Node(arr[ind]);
+            root.left = buildTreeFromArr(arr, (2 * ind) + 1);
+            root.right = buildTreeFromArr(arr, (2 * ind) + 2);
+        }
 
         return root;
     }
@@ -49,12 +55,11 @@ public class PractTrees {
             } else {
                 System.out.print(ele.val + " ");
 
-                if (ele.right != null) {
-                    q.add(ele.right);
-                }
-
                 if (ele.left != null) {
                     q.add(ele.left);
+                }
+                if (ele.right != null) {
+                    q.add(ele.right);
                 }
             }
         }
@@ -163,11 +168,32 @@ public class PractTrees {
             System.out.print(i+" ");
         }
     }
-    public static void main(String[] args) {
-        int arr[] = { 1, 2, 3, 4, 5, 6, 7 };
-        Node root = null;
+    
+    public static int NopathsumNode2(Node root, int sum) {
+        if (root == null) {
+            return 0;
+        }
+        return NopathsumNode(root, sum) + NopathsumNode(root.left, sum) + NopathsumNode(root.right, sum);
+    }
 
+    public static int NopathsumNode(Node node, int sum) {
+        if (node == null) {
+            return 0;
+        }
+
+        if (node.val == sum && node.left == null && node.right == null) {
+            return 1;
+        }
+        return NopathsumNode(node.left, sum - node.val)
+                + NopathsumNode(node.right, sum - node.val);
+    }
+    public static void main(String[] args) {
+        // int arr[] = { 1, 2, 3, 4, 5, 6, 7 };
+        int arr[] = {5, 4, 8, 11, -1, 13, 4, 7, 2, -1, -1, -1, 1};
+        
+        Node root;
         root = buildTreeFromArr(arr, 0);
+        System.out.println(NopathsumNode2(root, 22));
 
         // levelOrd(root);
 
@@ -175,6 +201,7 @@ public class PractTrees {
         // rightView(root);
 
         // topView(root);
-        bottomView(root);
+        // bottomView(root);
+
     }
 }
