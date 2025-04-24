@@ -1,41 +1,39 @@
 public class MaxApiKey {
 
     public static void main(String[] args) {
-        String currkey = "1100";
-        String rotKey = "1000";
+        String currkey = "1010";
+        String rotKey = "1100";
 
-        int zcount = 0;
+        int onecount = 0;
         StringBuilder ans = new StringBuilder();
 
         for (int i = 0; i < rotKey.length(); i++) {
             if (rotKey.charAt(i) == '1') {
-                zcount++;
+                onecount++;
             }
         }
-        int j = 0;
-        for (int i = currkey.length() - 1; i >= 0; i--) {
-            if (currkey.charAt(j) == '0') {
-                if (zcount > 0) {
+
+        int n = currkey.length();
+
+        for (int i = 0; i < n; i++) {
+            char c = currkey.charAt(i);
+
+            if (c == '0') {
+                if (onecount > 0) {
                     ans.append('1');
-                    zcount--;
+                    onecount--;
                 } else {
-                    ans.append(currkey.charAt(j));
+                    ans.append('0');
                 }
             } else {
-                if (zcount > i) {
-                    if (currkey.charAt(j) == '0') {
-                        ans.append('1');
-                        zcount--;
-                    } else {
-                        ans.append('0');
-                        zcount--;
-                    }
+                if (onecount > (n - i - 1)) {
+                    ans.append('0');
+                    onecount--;
                 } else {
-                    ans.append(currkey.charAt(j));
+                    ans.append('1');
                 }
             }
-            j++;
         }
-        System.out.println(ans);
+        System.out.println(ans.toString());
     }
 }
