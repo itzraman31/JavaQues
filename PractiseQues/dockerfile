@@ -1,0 +1,7 @@
+FROM openjdk
+
+WORKDIR /questions
+
+COPY ./NthPrime.java .
+
+CMD ["sh","-c","javac NthPrime.java && java NthPrime"]
