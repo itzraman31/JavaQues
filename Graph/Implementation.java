@@ -1,7 +1,10 @@
+
 import java.util.*;
 
 public class Implementation {
+
     static class edge {
+
         int src;
         int dest;
         int dist;
@@ -12,6 +15,7 @@ public class Implementation {
             this.dist = dis;
         }
     }
+
     public static void createGraph(ArrayList<edge> graph[]) {
         for (int i = 0; i < graph.length; i++) {
             graph[i] = new ArrayList<edge>();
@@ -96,6 +100,7 @@ public class Implementation {
     }
 
     static class Pair implements Comparable<Pair> {
+
         int dis;
         int node;
 
@@ -154,15 +159,11 @@ public class Implementation {
         createGraph(graph);
 
         // BFS(graph, 2);
-
         // DFS(graph, 2, vis);
-
         // AllPath(graph, 2, vis, 3, res);
-
         // PriorityQueue<Integer> pq = new PriorityQueue<>();
         // PriorityQueue<Integer> pqI=new PriorityQueue<>(Collections.reverseOrder());
         // ArrayList<ArrayList<Integer>> arr=new ArrayList<>();
-
         // PRINTING GRAPH --->>>
         // int n = 0;
         // while (n != -1) {
@@ -173,7 +174,6 @@ public class Implementation {
         // print(graph, 0);
         // }
         // }
-
         // Dijkastra(1, vis, graph);
     }
 }

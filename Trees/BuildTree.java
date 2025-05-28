@@ -256,7 +256,6 @@ public class BuildTree {
         }
         PrintLeaf(root.right);
     }
-
     public static Node makeTreeFromArrayComplete(int arr[], int n, int ind) {
         if (ind >= n)
             return null;
