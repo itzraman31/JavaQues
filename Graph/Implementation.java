@@ -120,6 +120,7 @@ public class Implementation {
 
         int disArr[] = new int[graph.length];
         disArr[src] = 0;
+
         for (int i = 0; i < graph.length; i++) {
             if (i != src) {
                 disArr[i] = Integer.MAX_VALUE;
@@ -128,6 +129,7 @@ public class Implementation {
 
         pq.add(new Pair(0, src));
         vis[src] = true;
+
         while (!pq.isEmpty()) {
             Pair p = pq.remove();
 
