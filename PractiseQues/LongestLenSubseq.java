@@ -1,4 +1,3 @@
-
 public class LongestLenSubseq {
     public static int solve(int arr[],int ind,int prev) {
         if(ind>=arr.length)return 0;
