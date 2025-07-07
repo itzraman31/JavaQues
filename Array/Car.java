@@ -18,7 +18,6 @@ class CarProp {
         System.out.println("Speed of Car is: " + speed);
         System.out.println("Engine of Car is: " + engine);
     }
-
 }
 
 class SuperCar extends CarProp {
@@ -43,5 +42,4 @@ public class Car {
         // car.displayAllProp();
         car.display();
     }
-
 }
