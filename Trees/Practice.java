@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Node {
     int data;
     Node left;
@@ -13,6 +15,10 @@ class Node {
 public class Practice {
 
     public static void levelOrder(Node root){
+        LinkedList<Node> q=new LinkedList<Node>();
+        q.add(root);
+        q.add(null);
+
         
     }
     public static void main(String[] args) {
