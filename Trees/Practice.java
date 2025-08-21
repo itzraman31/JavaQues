@@ -14,12 +14,17 @@ class Node {
 
 public class Practice {
 
+    public static int Maxele(Node root) {
+        if (root == null)
+            return -1;
+
+        return Math.max(root.data, Math.max(Maxele(root.left), Maxele(root.right)));
+    }
+
     public static void levelOrder(Node root){
         LinkedList<Node> q=new LinkedList<Node>();
         q.add(root);
         q.add(null);
-
-        
     }
     public static void main(String[] args) {
 
