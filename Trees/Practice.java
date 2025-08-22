@@ -14,6 +14,27 @@ class Node {
 
 public class Practice {
 
+    static Scanner sc=new Scanner(System.in);
+
+    public static Node buildTree() {
+        Node root = null;
+
+        System.out.print("Enter data: ");
+        int data = sc.nextInt();
+
+        if (data == -1)
+            return null;
+
+        root = new Node(data);
+
+        System.out.println("Enter data for left of: " + data);
+        root.left = buildTree();
+        System.out.println("Enter data for right of: " + data);
+        root.right = buildTree();
+
+        return root;
+    }
+
     public static int Maxele(Node root) {
         if (root == null)
             return -1;
@@ -62,7 +83,7 @@ public class Practice {
             } else {
                 Node temp = q.peek();
                 horizontalDis hh = horizD.peek();
-                System.out.print(temp.data+" ");
+                System.out.print(temp.data + " ");
                 int ff = hh.hd;
                 d = temp.data;
 
@@ -96,12 +117,14 @@ public class Practice {
                     if (!topviewmap.containsKey(ff + 1)) {
                         topviewmap.put(ff + 1, temp.right.data);
                     }
-                    
+
                     horizD.add(new horizontalDis(ff + 1, temp.right, temp.right.data));
                     horizD1.add(new horizontalDis(ff + 1, temp.right, temp.right.data));
                 }
             }
         }
+    }
+
     public static void main(String[] args) {
 
         Node root = new Node(5);
